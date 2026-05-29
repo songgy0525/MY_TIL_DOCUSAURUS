@@ -39,7 +39,7 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          onInlineTags: 'warn',
+          onInlineTags: 'ignore',
           onInlineAuthors: 'ignore',
           onUntruncatedBlogPosts: 'ignore',
         },
