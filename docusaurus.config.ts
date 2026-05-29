@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: '송경용의 TIL',
-  tagline: '⚡ 백엔드 취준생의 오늘도 배웠다 일기',
+  title: 'songkyeongyong',
+  tagline: 'Today I Learned',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -60,18 +60,18 @@ const config: Config = {
     navbar: {
       title: 'songkyeongyong',
       items: [
-        { to: '/blog', label: '📡 TIL', position: 'left' },
-        { to: '/blog/tags', label: '🏷 Tags', position: 'left' },
+        { to: '/blog', label: 'Archive', position: 'left' },
+        { to: '/blog/tags', label: 'Tags', position: 'left' },
         {
           href: 'https://github.com/songgy0525',
-          label: 'GitHub',
+          label: 'Github',
           position: 'right',
         },
       ],
     },
     footer: {
       style: 'dark',
-      copyright: `⚡ 송경용의 백엔드 취준 TIL · ${new Date().getFullYear()}`,
+      copyright: `Seoul · Backend Developer · ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.github,
