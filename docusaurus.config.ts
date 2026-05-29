@@ -1,0 +1,84 @@
+import {themes as prismThemes} from 'prism-react-renderer';
+import type {Config} from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
+
+const config: Config = {
+  title: '송경용의 TIL',
+  tagline: '⚡ 백엔드 취준생의 오늘도 배웠다 일기',
+  favicon: 'img/favicon.ico',
+
+  future: {
+    v4: true,
+  },
+
+  url: 'https://songgy0525.github.io',
+  baseUrl: '/MY_TIL_DOCUSAURUS/',
+
+  organizationName: 'songgy0525',
+  projectName: 'MY_TIL_DOCUSAURUS',
+  trailingSlash: false,
+
+  onBrokenLinks: 'throw',
+
+  i18n: {
+    defaultLocale: 'ko',
+    locales: ['ko'],
+  },
+
+  presets: [
+    [
+      'classic',
+      {
+        docs: false,
+        blog: {
+          routeBasePath: '/blog',
+          showReadingTime: true,
+          blogTitle: 'songkyeongyong.TIL',
+          blogDescription: '백엔드 취준생의 Today I Learned',
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          onInlineTags: 'warn',
+          onInlineAuthors: 'ignore',
+          onUntruncatedBlogPosts: 'ignore',
+        },
+        theme: {
+          customCss: './src/css/custom.css',
+        },
+      } satisfies Preset.Options,
+    ],
+  ],
+
+  themeConfig: {
+    image: 'img/docusaurus-social-card.jpg',
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+    },
+    navbar: {
+      title: 'songkyeongyong',
+      items: [
+        { to: '/blog', label: '📡 TIL', position: 'left' },
+        { to: '/blog/tags', label: '🏷 Tags', position: 'left' },
+        {
+          href: 'https://github.com/songgy0525',
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
+    },
+    footer: {
+      style: 'dark',
+      copyright: `⚡ 송경용의 백엔드 취준 TIL · ${new Date().getFullYear()}`,
+    },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+      additionalLanguages: ['java', 'bash', 'yaml'],
+    },
+  } satisfies Preset.ThemeConfig,
+};
+
+export default config;
