@@ -1,7 +1,7 @@
 ---
 title: "[TIL] SQL 기초 문법과 DDL, DML, 페이징"
 date: 2026-03-12
-tags: [Oracle, SQL, DDL, DML, ROWNUM, 페이징, NULL]
+tags: [Oracle, SQL, DDL, DML, ROWNUM, 페이징]
 ---
 
 > 부트캠프 백엔드 과정 · 2026.03.12
