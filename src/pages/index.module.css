@@ -1,393 +1,108 @@
-/* ── 메인 레이아웃 ── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap');
+
 .main {
-  position: relative;
   min-height: 100vh;
-  background: #06080f;
-  overflow: hidden;
-}
-
-/* ── 별 배경 ── */
-.starfield {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.star {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  animation: twinkle var(--duration, 3s) ease-in-out infinite;
-  opacity: 0.6;
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 0.2; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.3); }
-}
-
-/* ── 그리드 라인 ── */
-.grid {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-/* ── 히어로 ── */
-.hero {
-  position: relative;
-  z-index: 1;
+  background: #0c0c0c;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 80px 24px;
+  position: relative;
+  padding: 80px 40px;
 }
 
-.heroInner {
-  text-align: center;
-  max-width: 700px;
+/* ── 중앙 블록 ── */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 880px;
 }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(139, 92, 246, 0.3);
-  color: #c4b5fd;
+/* 상단 인덱스 */
+.index {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  font-family: 'JetBrains Mono', monospace;
-  letter-spacing: 2px;
-  padding: 6px 16px;
-  border-radius: 999px;
-  margin-bottom: 32px;
+  letter-spacing: 3px;
+  color: #444;
+  text-transform: uppercase;
+  margin-bottom: 28px;
 }
 
-.dot {
-  width: 6px;
-  height: 6px;
-  background: #a855f7;
-  border-radius: 50%;
-  box-shadow: 0 0 6px #a855f7;
-  animation: pulse 2s ease-in-out infinite;
+/* 이름 */
+.name {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: clamp(64px, 10vw, 140px);
+  font-weight: 300;
+  color: #f0ece4;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin: 0 0 40px 0;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
-}
-
-/* ── 글리치 타이틀 ── */
-.glitch {
-  font-size: clamp(36px, 8vw, 80px);
-  font-weight: 900;
-  font-family: 'JetBrains Mono', monospace;
-  color: #fff;
-  text-shadow:
-    0 0 20px rgba(168, 85, 247, 0.8),
-    0 0 40px rgba(168, 85, 247, 0.4),
-    0 0 80px rgba(168, 85, 247, 0.2);
-  position: relative;
-  margin-bottom: 24px;
-  animation: glitchAnim 6s infinite;
-}
-
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0; left: 0; right: 0;
-}
-
-.glitch::before {
-  color: #f0abfc;
-  animation: glitch1 6s infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
-}
-
-.glitch::after {
-  color: #67e8f9;
-  animation: glitch2 6s infinite;
-  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
-}
-
-@keyframes glitch1 {
-  0%, 90%, 100% { transform: translate(0); opacity: 0; }
-  92% { transform: translate(-3px, 1px); opacity: 0.8; }
-  94% { transform: translate(3px, -1px); opacity: 0.8; }
-  96% { transform: translate(0); opacity: 0; }
-}
-
-@keyframes glitch2 {
-  0%, 88%, 100% { transform: translate(0); opacity: 0; }
-  90% { transform: translate(3px, 2px); opacity: 0.8; }
-  93% { transform: translate(-3px, -1px); opacity: 0.8; }
-  95% { transform: translate(0); opacity: 0; }
-}
-
-@keyframes glitchAnim {
-  0%, 89%, 100% { text-shadow: 0 0 20px rgba(168,85,247,0.8), 0 0 40px rgba(168,85,247,0.4); }
-  90% { text-shadow: -2px 0 #f0abfc, 2px 0 #67e8f9, 0 0 20px rgba(168,85,247,0.8); }
-  92% { text-shadow: 2px 0 #f0abfc, -2px 0 #67e8f9, 0 0 20px rgba(168,85,247,0.8); }
-  94% { text-shadow: 0 0 20px rgba(168,85,247,0.8), 0 0 40px rgba(168,85,247,0.4); }
-}
-
-/* ── 서브타이틀 ── */
-.subtitle {
-  font-size: 18px;
-  color: #94a3b8;
-  margin-bottom: 32px;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-.cursor {
-  color: #a855f7;
-  font-weight: bold;
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.neon {
-  color: #e879f9;
-  text-shadow: 0 0 10px rgba(232, 121, 249, 0.6), 0 0 20px rgba(232, 121, 249, 0.3);
-}
-
-/* ── 스킬 태그 ── */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
+/* 구분선 */
+.rule {
+  width: 100%;
+  height: 1px;
+  background: #222;
   margin-bottom: 40px;
 }
 
-.skillTag {
-  background: rgba(139, 92, 246, 0.08);
-  border: 1px solid rgba(139, 92, 246, 0.25);
-  color: #c4b5fd;
+/* 네비게이션 */
+.nav {
+  display: flex;
+  gap: 48px;
+}
+
+.link {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
-  font-family: 'JetBrains Mono', monospace;
-  padding: 4px 12px;
-  border-radius: 6px;
-  transition: all 0.2s;
-}
-
-.skillTag:hover {
-  background: rgba(139, 92, 246, 0.2);
-  border-color: rgba(139, 92, 246, 0.5);
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.3);
-}
-
-/* ── 버튼 ── */
-.heroActions {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btnPrimary {
-  display: inline-block;
-  padding: 14px 32px;
-  background: linear-gradient(135deg, #7c3aed, #a855f7);
-  color: white !important;
-  font-weight: 700;
-  font-size: 15px;
-  border-radius: 10px;
+  letter-spacing: 2px;
+  color: #555 !important;
   text-decoration: none !important;
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
-  transition: all 0.2s;
-}
-
-.btnPrimary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
-}
-
-.btnSecondary {
-  display: inline-block;
-  padding: 14px 32px;
-  background: transparent;
-  color: #c4b5fd !important;
-  font-weight: 700;
-  font-size: 15px;
-  border-radius: 10px;
-  border: 1px solid rgba(139, 92, 246, 0.4);
-  text-decoration: none !important;
-  transition: all 0.2s;
-}
-
-.btnSecondary:hover {
-  background: rgba(139, 92, 246, 0.1);
-  border-color: rgba(139, 92, 246, 0.7);
-  transform: translateY(-2px);
-}
-
-/* ── 섹션 공통 ── */
-.section {
+  text-transform: uppercase;
+  transition: color 0.3s;
   position: relative;
-  z-index: 1;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 24px 80px;
 }
 
-.sectionHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-}
-
-.sectionLabel {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  color: #a855f7;
-  letter-spacing: 1px;
-}
-
-.seeAll {
-  font-size: 13px;
-  color: #7c3aed !important;
-  text-decoration: none !important;
-  transition: color 0.2s;
-}
-
-.seeAll:hover {
-  color: #a855f7 !important;
-}
-
-/* ── TIL 카드 ── */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  position: relative;
-  display: block;
-  background: rgba(13, 17, 35, 0.8);
-  border: 1px solid rgba(139, 92, 246, 0.15);
-  border-radius: 14px;
-  padding: 24px;
-  text-decoration: none !important;
-  transition: all 0.25s;
-  overflow: hidden;
-  backdrop-filter: blur(8px);
-}
-
-.card:hover {
-  border-color: rgba(168, 85, 247, 0.5);
-  transform: translateY(-4px);
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.15), 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.card:hover .cardGlow {
-  opacity: 1;
-}
-
-.cardGlow {
+.link::after {
+  content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at top left, rgba(168, 85, 247, 0.08), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: #f0ece4;
+  transition: width 0.3s;
 }
 
-.cardDate {
-  font-size: 11px;
+.link:hover {
+  color: #f0ece4 !important;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* 하단 푸터 */
+.foot {
+  position: absolute;
+  bottom: 48px;
+  right: 48px;
   font-family: 'JetBrains Mono', monospace;
-  color: #6b7280;
-  margin-bottom: 10px;
-}
-
-.cardTitle {
-  font-size: 15px;
-  font-weight: 700;
-  color: #e2e8f0;
-  line-height: 1.5;
-  margin-bottom: 16px;
-}
-
-.cardTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.cardTag {
-  font-size: 11px;
-  font-family: 'JetBrains Mono', monospace;
-  background: rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(139, 92, 246, 0.2);
-  color: #c4b5fd;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-
-/* ── 통계 ── */
-.stats {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  gap: 0;
-  max-width: 600px;
-  margin: 0 auto 80px;
-  border: 1px solid rgba(139, 92, 246, 0.2);
-  border-radius: 16px;
-  overflow: hidden;
-  backdrop-filter: blur(8px);
-  background: rgba(13, 17, 35, 0.6);
-}
-
-.statItem {
-  flex: 1;
-  text-align: center;
-  padding: 32px 24px;
-  border-right: 1px solid rgba(139, 92, 246, 0.15);
-}
-
-.statItem:last-child {
-  border-right: none;
-}
-
-.statValue {
-  font-size: 32px;
-  font-weight: 900;
-  font-family: 'JetBrains Mono', monospace;
-  color: #a855f7;
-  text-shadow: 0 0 12px rgba(168, 85, 247, 0.5);
-  margin-bottom: 6px;
-}
-
-.statUnit {
-  font-size: 16px;
-  margin-left: 2px;
-}
-
-.statLabel {
-  font-size: 12px;
-  color: #6b7280;
-  letter-spacing: 0.5px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #2a2a2a;
+  text-transform: uppercase;
 }
 
 @media (max-width: 600px) {
-  .stats { flex-direction: column; }
-  .statItem { border-right: none; border-bottom: 1px solid rgba(139, 92, 246, 0.15); }
-  .statItem:last-child { border-bottom: none; }
-  .heroActions { flex-direction: column; align-items: center; }
+  .foot {
+    position: static;
+    margin-top: 60px;
+  }
+  .nav {
+    gap: 32px;
+  }
 }
