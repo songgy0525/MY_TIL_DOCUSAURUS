@@ -13,7 +13,7 @@ export default function Home() {
           <h1 className={styles.name}>songkyeongyong</h1>
           <div className={styles.rule} />
           <nav className={styles.nav}>
-            <Link to="/blog" className={styles.link}>Archive</Link>
+            <Link to="/blog/archive" className={styles.link}>Archive</Link>
             <a
               href="https://github.com/songgy0525"
               className={styles.link}

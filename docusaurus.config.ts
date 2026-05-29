@@ -60,7 +60,8 @@ const config: Config = {
     navbar: {
       title: 'songkyeongyong',
       items: [
-        { to: '/blog', label: 'Archive', position: 'left' },
+        { to: '/blog', label: 'Recent', position: 'left' },
+        { to: '/blog/archive', label: 'Archive', position: 'left' },
         { to: '/blog/tags', label: 'Tags', position: 'left' },
         {
           href: 'https://github.com/songgy0525',
