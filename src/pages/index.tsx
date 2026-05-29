@@ -54,7 +54,7 @@ export default function Home() {
           <div className={styles.heroInner}>
             <div className={styles.badge}>
               <span className={styles.dot} />
-              BACKEND DEV · LEARNING EVERYDAY
+              songkyeongyong
             </div>
             <h1 className={styles.glitch} data-text="songkyeongyong">
               songkyeongyong
@@ -102,21 +102,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 통계 */}
-        <section className={styles.stats}>
-          {[
-            { label: 'TIL 포스트', value: TILS.length, unit: '개' },
-            { label: '사용 기술', value: SKILLS.length, unit: '가지' },
-            { label: '목표', value: '취업', unit: '🔥' },
-          ].map((s, i) => (
-            <div key={i} className={styles.statItem}>
-              <div className={styles.statValue}>
-                {s.value}<span className={styles.statUnit}>{s.unit}</span>
-              </div>
-              <div className={styles.statLabel}>{s.label}</div>
-            </div>
-          ))}
-        </section>
 
       </main>
     </Layout>
