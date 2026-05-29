@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://songgy0525.github.io/MY_TIL_DOCUSAURUS/blog</id>
-    <title>송경용의 TIL Blog</title>
+    <title>songkyeongyong Blog</title>
     <updated>2026-05-29T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://songgy0525.github.io/MY_TIL_DOCUSAURUS/blog"/>
-    <subtitle>송경용의 TIL Blog</subtitle>
+    <subtitle>songkyeongyong Blog</subtitle>
     <icon>https://songgy0525.github.io/MY_TIL_DOCUSAURUS/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[[TIL] Ubuntu 서버 구축 + Tomcat 배포 + Jenkins 설치까지]]></title>
