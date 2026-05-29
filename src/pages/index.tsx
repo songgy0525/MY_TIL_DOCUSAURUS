@@ -10,7 +10,7 @@ export default function Home() {
 
         <div className={styles.center}>
           <span className={styles.index}>TIL — {new Date().getFullYear()}</span>
-          <h1 className={styles.name}>songkyeongyong</h1>
+          <h1 className={styles.name}>Dev.Songkyeongyong</h1>
           <div className={styles.rule} />
           <nav className={styles.nav}>
             <Link to="/blog/archive" className={styles.link}>Archive</Link>
