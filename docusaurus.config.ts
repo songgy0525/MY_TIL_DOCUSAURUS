@@ -32,7 +32,7 @@ const config: Config = {
         docs: false,
         blog: {
           routeBasePath: '/blog',
-          showReadingTime: true,
+          showReadingTime: false,
           blogTitle: 'songkyeongyong.TIL',
           blogDescription: '백엔드 취준생의 Today I Learned',
           feedOptions: {
