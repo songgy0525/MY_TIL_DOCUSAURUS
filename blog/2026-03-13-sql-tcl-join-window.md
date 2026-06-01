@@ -1,7 +1,7 @@
 ---
 title: "[TIL] SQL 트랜잭션, 문자열, 조인 정리"
 date: 2026-03-13
-tags: [Oracle, SQL, TCL, JOIN, CASE, NULL]
+tags: [Oracle, SQL, TCL, JOIN, CASE, "NULL"]
 ---
 
 > 부트캠프 백엔드 과정 · 2026.03.13
