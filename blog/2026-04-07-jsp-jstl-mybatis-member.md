@@ -222,7 +222,7 @@ password=tiger
 
 | 테스트 대상 | 파라미터 | 검증 방식 |
 |-----------|---------|---------|
-| 로그인 | Map<String,Object> | `assertNotNull(result)` |
+| 로그인 | `Map<String,Object>` | `assertNotNull(result)` |
 | 상세조회 | String id | `assertNotNull(dto)` |
 | 정보수정 | MemberDTO | `assertEquals(1, cnt)` |
 | 등록 | MemberDTO | `assertEquals(1, cnt)` |
